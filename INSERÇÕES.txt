@@ -1,0 +1,170 @@
+﻿create database if not exists PROJETO;
+use PROJETO;
+#drop database PROJETO;
+
+
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#INSERÇÃO DE DADOS NAS TABELAS AUXILIARES
+
+insert into CARGO
+values ('00000001','Gerente'),
+       ('00000002','Vendedor'),
+       ('00000003','Estoquista'),
+       ('00000004','Analista'),
+       ('00000005','Programador'),
+       ('00000006','Administrativo'),
+       ('00000007','Supervisor');
+       
+insert into SETOR
+values ('00000001','Gestão'),
+       ('00000002','Vendas'),
+       ('00000003','Engenharia de Software'),
+       ('00000005','Logística'),
+       ('00000006','Administrativo');
+       
+insert into FABRICANTE
+values ('00000001','Markees'),
+       ('00000002','Origins Minimals'),
+       ('00000003','FigureActions'),
+       ('00000004','Miniacts'),
+       ('00000005','MiniFac'),
+       ('00000006','ToyFactory'),
+       ('00000007','LoveToy'),
+       ('00000008','BinqueToys'),
+       ('00000009','PequeT'),
+       ('00000010','Toys Mania'),
+       ('00000011','The Best');
+       
+insert into TIPO_SOLICITACAO
+values ('00000001','Cancelamento'),
+       ('00000002','Devolução'),
+       ('00000003','Troca');
+       
+insert into ESTATS
+values ('00000001','Aguardando aprovação'),
+       ('00000002','Aprovado'),
+       ('00000003','Negado');
+       
+insert into PAGAMENTO
+values ('00000001','Boleto'),
+       ('00000002','Cartão débito'),
+       ('00000003','Cartão crédito'),
+       ('00000004','PayPal'),
+       ('00000005','PagSeguro');
+       
+       
+#---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#INSERÇÃO DE VALORES NAS TABELAS PRINCIPAIS
+
+insert into CLIENTE
+values ('00340730005','Victor', 'Paravatti','19981223344','Rua do Canavial, 59','Pinhalzinho','Parque das Gazelas','13960000','victor.paravatti@gmail.com','147258369'),
+	   ('09563263073','João', 'Souza','11955663586','Rua Treze de Setembro, 125','Porto Velho','Mocambo','86532100','joao.souza@gmail.com','124097199'),
+       ('60975363050','Adriana', 'Alves','19989654236','Rua Irineu, 500','Fortaleza','Mondubim','60761830','adriana.alves@gmail.com','434609436'),
+       ('36146396060','Ana', 'Ernesto','35988336321','Rua Manoel de Souza, 5','Araçatuba','Etheocle Turrini','88708748','ana.ernesto@gmail.com','792599748'),
+       ('93098998083','Carla', 'Dias','11956897852','Rua São Benedito, 9','Boa Vista','São Martinho','57605120','carla.dias@gmail.com','667718168'),
+       ('65438838046','Robson', 'Alves','19963365665','Avenida Democráticos, 509','Belém','Capitão Eduardo','68906865','robson.alves@gmail.com','244224434'),
+       ('06132717005','Carlos', 'Leonor','35989966321','Rua Sena, 159','Macapá','Vila Amazonas','37701271','carlos.leonor@gmail.com','708243652'),
+       ('42096321042','Vitoria', 'Ferreira','35978899889','Rua Capitão Eleutério, 590','Rio Branco','Alecrim','29152054','vitoria.ferreira@gmail.com','163899510'),
+       ('68614298056','David', 'Andrade','11955002365','Travessa Rui Barbosa, 147','Cuiabá','São Conrado','65068296','david.andrade@gmail.com','166602771'),
+       ('93808274077','Lucas', 'Prensato','11974699645','Rua Dona Joana, 859','Colatina','Farolândia','06544035','lucas.prensato@gmail.com','428196361'),
+       ('56366606005','Roberta', 'Lourenço','19952658954','Rua Treze, 759','Fortaleza','Ponta Negra','88020120','roberta.lourenço@gmail.com','597679574'),
+       ('68818764080','Roberto', 'Munhoz','19981223344','Rua Santa Inês, 959','Brasília','Centro','79116350','roberto.munhoz@gmail.com','300454080'),
+       ('65567636083','Claudio', 'Pinto','35955022365','Avenida Bahia, 259','Uberlândia','Tocantins','91770770','claudio.pinto@gmail.com','937091004'),
+       ('05804287028','Demetrios', 'Pantaleão','1997332211','Tuiuti','Rua dos Mangueiras, 87','Capinzeiro do Boi Gordo','88519581','demetrios.pantaleao@gmail.com','369258147');
+       
+insert into FUNCIONARIO
+values ('00000001','00000001','00000001','David Busch','david.busch@minimals.com.br','11995437411','260667590'),
+	   ('00000002','00000004','00000003','Guilherme Lourenço','guilherme.lourenco@minimals.com.br','35988336321','821583123'),
+       ('00000003','00000005','00000003','Demetrios Pantaleão','demetrios.pantaleao@minimals.com.br','19963365448','895943674'),
+       ('00000004','00000007','00000001','Victor Paravatti','victor.paravatti@minimals.com.br','19985566332','199584881'),
+       ('00000005','00000003','00000005','Carlos Eduardo','carlos.eduardo@minimals.com.br','11963321445','181339235'),
+       ('00000006','00000006','00000006','Amanda Nunes','amanda.nunes@minimals.com.br','11955635222','407557035'),
+       ('00000007','00000002','00000002','Carla Rodrigues','carla.rodrigues@minimals.com.br','35945568523','468358053'),
+       ('00000008','00000006','00000006','Vitoria Souza','vitoria.souza@minimals.com.br','19999665544','232390576'),
+       ('00000009','00000003','00000005','Marcos Silva','marcos.silva@minimals.com.br','11978893221','842990849'),
+       ('00000010','00000003','00000005','Arderson Rosa','arderson.rosa@minimals.com.br','35945852565','303500709'),
+       ('00000011','00000002','00000002','Lucas Andreucci','lucas.andreucci@minimals.com.br','19985434261','712036885');
+       
+insert into PRODUTO
+values ('0000000001','Naruto Uzumaki','100.00','1000','1951754','Miniatura do Naruto Uzumaki após se tornar hokage.','4','5','naruto_hokage.jpg','00000001','00000003'),
+	   ('0000000002','Corvette Stingray','179.90','500','1374104','Miniatura do Corvette Stingray de 1969.','4','1','Corvette_1969.jpg','00000002','00000003'),
+       ('0000000003','Airbus A320','229.90','600','8606575','Miniatura de um avião Airbus A320.','5','1','Airbus_A320.jpg','00000004','00000003'),
+       ('0000000004','Super Man','99.90','700','8439947','Miniatura do personagem do filme Super Man.','5','3','superman.jpg','00000003','00000003'),
+       ('0000000005','Homem Aranha','99.90','700','2107316','Miniatura do personagem do filme Homem Aranha.','4','3','spiderman.jpg','00000003','00000003'),
+       ('0000000006','Barbie Fadas Asas Voadoras','99.90','700','8333955','Miniatura da boneca barbie com asas.','5','2','barbie_asas.jpg','00000005','00000003'),
+       ('0000000007','Lego Jurassic World','300.00','1000','8044252','Pacote lego com a ilustração de Jurassic World.','5','4','lego_jurassic.jpg','00000006','00000003'),
+       ('0000000008','Lego Harry Potter','300.00','1000','7585598','Pacote lego com a ilustração da Harry Potter.','5','1','lego_HP.jpg','00000007','00000003'),
+       ('0000000009','Carrinho de Controle Remoto','150.00','300','9523925','Carrinho de controle remoto vermelho no estilo SUV.','5','2','carrinho_controle.jpg','00000008','00000003'),
+       ('0000000010','Lançador de dardos Nerf','200.00','250','1298555','Lançadora de dardos Nerf com aparência de uma metralhadora.','4','2','nerf.jpg','00000009','00000003'),
+       ('0000000011','Mini Boneca Surpresa LOL','100.00','100','7231337','Mini Boneca LOL em surpresa.','5','3','LOL.jpg','000000010','00000003'),
+	   ('0000000012','Pista Hot Wheels','279.90','1000','3711304','Pacote da Pista Hot Wheels com peças para montar.','4','2','HotWheels.jpg','00000011','00000003');
+       
+insert into PEDIDO
+values ('509361593',NULL,'2020-12-22','00340730005','00000001','00000006','00000001','499.50'),
+	   ('996594444','2021-01-11','2020-12-23','09563263073','00000002','00000008','00000002','300.00'),
+       ('818675328',NULL,'2020-12-24','60975363050','00000003','00000006','00000003','179.90'),
+       ('918443371','2021-01-13','2020-12-24','36146396060','00000002','00000008','00000004','1089.70'),
+       ('545771731',NULL,'2020-12-25','93098998083','00000001','00000006','00000005','99.90'),
+       ('419429337','2021-01-15','2020-12-27','65438838046','00000002','00000008','00000003','300.00'),
+       ('546809769','2021-01-16','2020-12-28','06132717005','00000002','00000006','00000001','300.00'),
+       ('743216124',NULL,'2020-12-29','42096321042','00000003','00000008','00000004','500.00'),
+       ('182582978','2021-01-18','2020-12-30','68614298056','00000002','00000006','00000003','99.90'),
+       ('622947368','2021-01-19','2020-12-31','93808274077','00000002','00000008','00000002','400.00'),
+       ('545042701',NULL,'2021-01-01','56366606005','00000001','00000006','00000005','300.00'),
+       ('862086054',NULL,'2021-01-02','68818764080','00000001','00000008','00000003','99.90');
+       
+insert into SOLICITACAO
+values ('00000001','Solicitação de Cancelamento do pedido, pois não estou mais interessado.','00000006','00000001','00000001','509361593'),
+       ('00000002','Solicitação de Troca, pois desejo outro produto.','00000008','00000003','00000001','818675328'),
+       ('00000003','Solicitação de Devolução, pois o produto está avariado','00000006','00000002','00000002','918443371'),
+       ('00000004',null,'00000006','00000001','00000001','545771731'),
+       ('00000005','Solicitação de Cancelamento da compra, pois mudei de endereço.','00000008','00000001','00000002','546809769'),
+       ('00000006',null,'00000006','00000003','00000001','622947368'),
+       ('00000007','Solicitação de Troca do produto, pois o chá de revelação mostrou que era menino.','00000006','00000003','00000002','862086054'),
+       ('00000008',null,'00000006','00000003','00000001','622947368'),
+       ('00000009','Solicitação de Devolução do produto, pois não corresponde às descrições.','00000008','00000002','00000002','419429337'),
+       ('00000010','Solicitação de Cancelamento, pois tive de viajar e não haverá ninguém para receber o produto.','00000008','00000001','00000003','918443371');
+       
+insert into ITENS_PEDIDO
+	   #1 PEDIDO
+values ('01','3','99.90','299.70','0000000005','509361593'),
+	   ('02','2','99.90','199.80','0000000004','509361593'),
+       #2 PEDIDO
+       ('01','1','300.00','300.00','0000000008','996594444'),
+       #3 PEDIDO
+       ('01','1','179.90','179.90','0000000002','818675328'),
+       #4 PEDIDO
+       ('01','2','279.90','559.80','0000000012','918443371'),
+	   ('02','1','229.90','229.90','0000000003','918443371'),
+       ('03','2','150.00','300.00','0000000009','918443371'),
+	   #5 PEDIDO
+       ('01','1','99.90','99.90','0000000006','545771731'),
+       #6 PEDIDO
+       ('01','1','300.00','300.00','0000000007','419429337'),
+       #7 PEDIDO
+       ('01','3','100.00','300.00','0000000011','546809769'),
+       #8 PEDIDO
+       ('01','5','100.00','500.00','0000000001','743216124'),
+       #9 PEDIDO
+       ('01','1','99.90','99.90','0000000004','182582978'),
+       #10 PEDIDO
+       ('01','2','200.00','400.00','0000000010','622947368'),
+       #11 PEDIDO
+       ('01','3','300.00','300.00','0000000007','545042701'),
+       #12 PEDIDO
+       ('01','1','99.90','99.90','0000000006','862086054');
+       
+insert into CARRINHO
+values ('01','509361593'),
+       ('02','996594444'),
+       ('03','818675328'),
+       ('04','918443371'),
+       ('05','545771731'),
+       ('06','419429337'),
+       ('07','546809769'),
+       ('08','743216124'),
+       ('09','182582978'),
+       ('10','622947368'),
+       ('11','545042701'),
+       ('12','862086054');
